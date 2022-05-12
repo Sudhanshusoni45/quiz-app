@@ -1,6 +1,6 @@
 import { dc, marvel } from "../../assets";
 import { Card } from "../../components";
-import "./LandingPage.css";
+import "./landingPage.css";
 
 const LandingPage = () => {
   return (

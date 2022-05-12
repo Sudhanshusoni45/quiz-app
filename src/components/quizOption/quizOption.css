@@ -1,0 +1,11 @@
+.quiz_option_conatiner {
+  width: 30rem;
+  height: 2rem;
+  background: grey;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+.quiz_option {
+  background: red;
+}
