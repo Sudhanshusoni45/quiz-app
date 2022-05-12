@@ -1,26 +1,18 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./login.css";
-// import { loginHandler } from "../../utils";
-// import { useAuth } from "../../context/auth-context";
-// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-  //   const { authDispatch } = useAuth();
-  const location = useLocation();
-  const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
-    // loginHandler({ user, authDispatch, navigate, location });
   };
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({ ...prevUser, [name]: value }));
   };
-
   const handleTestCredentials = (e) => {
     setUser({
       email: "adarshbalika@gmail.com",

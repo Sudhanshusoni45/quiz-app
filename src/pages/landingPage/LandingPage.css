@@ -4,5 +4,6 @@
   gap: var(--space-md);
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 80vh;
+  margin: var(--space-md) 0;
 }

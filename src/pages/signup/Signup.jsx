@@ -1,8 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./signup.css";
-// import { signupHandler } from "../../utils";
-// import { useAuth } from "../../context/auth-context";
 
 const Signup = () => {
   const [newUser, setNewUser] = useState({
@@ -11,14 +9,12 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  //   const navigate = useNavigate();
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setNewUser((prevUser) => ({ ...prevUser, [name]: value }));
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    // signupHandler({ newUser, authDispatch, navigate });
   };
   const handleTestCreadentials = () => {
     setNewUser({
@@ -86,9 +82,7 @@ const Signup = () => {
               Remember me
             </label>
           </div>
-          <a href="#">
-            <small>Forgot your password</small>
-          </a>
+
           <Link to={"/login"}>Already have an account ? Login instead</Link>
           <button className="btn signup_btn" onClick={handleTestCreadentials}>
             Test Signup
