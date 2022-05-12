@@ -1,0 +1,8 @@
+.landingPage_container{
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-md);
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
