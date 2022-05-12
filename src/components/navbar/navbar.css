@@ -1,0 +1,7 @@
+.navigation {
+  background-color: var(--hover-grey);
+  box-shadow: var(--medium-box-shadow);
+}
+.nav_logo {
+  color: black;
+}

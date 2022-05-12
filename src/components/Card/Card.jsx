@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./card.css";
-const Card = ({ image, title }) => {
+const Card = ({ image, title, quizId }) => {
+  const Navigate = useNavigate();
   return (
-    <div className="basic-card">
+    <div className="basic-card" onClick={() => Navigate(`quiz/${quizId}`)}>
       <div className="upperSection">
         <img
           src={image}

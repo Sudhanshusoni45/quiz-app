@@ -6,8 +6,8 @@ const LandingPage = () => {
   return (
     <>
       <div className="landingPage_container">
-        <Card image={marvel} title={"MARVEL"} />
-        <Card image={dc} title={"DC"} />
+        <Card quizId={1} image={marvel} title={"MARVEL"} />
+        <Card quizId={2} image={dc} title={"DC"} />
       </div>
     </>
   );

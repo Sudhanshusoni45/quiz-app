@@ -8,12 +8,21 @@
   display: flex;
   width: 50rem;
   flex-direction: column;
-  gap: var(--space-xxs);
+  gap: var(--space-xs);
   align-items: center;
-  padding: var(--space-sm);
+  padding: var(--space-xl);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 1rem;
 }
 .quiz_title {
   align-self: center;
+}
+.questionno_and_score_container {
+  display: flex;
+  width: 100%;
+}
+.quiz_score {
+  margin-left: auto;
 }
 
 @media screen and (max-width: 1193px) {
