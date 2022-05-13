@@ -3,5 +3,13 @@
   box-shadow: var(--medium-box-shadow);
 }
 .nav_logo {
-  color: black;
+  color: var(--font-color);
+}
+.username_btn {
+  font-size: 1rem;
+  cursor: pointer;
+}
+.hamburger_menu {
+  cursor: pointer;
+  color: var(--font-color);
 }

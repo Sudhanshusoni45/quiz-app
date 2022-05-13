@@ -1,13 +1,19 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./login.css";
+import { signInHandler } from "../../util";
+import { useAuth } from "../../context";
 const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+  const Navigate = useNavigate();
+  const { auth, authDispatch } = useAuth();
   const submitHandler = (e) => {
     e.preventDefault();
+    const { email, password } = user;
+    signInHandler({ auth, authDispatch, email, password, Navigate });
   };
   const changeHandler = (e) => {
     const { name, value } = e.target;
@@ -19,6 +25,7 @@ const Login = () => {
       password: "adarshBalika123",
     });
   };
+
   return (
     <>
       <div className="login_component">
