@@ -1,9 +1,19 @@
-import { createContext } from "react";
+import { createContext, useContext, useReducer } from "react";
+import { authReducer } from "../reducer";
 
 const AuthContext = createContext();
-
+const initialState = {
+  token: localStorage.getItem("token") ? localStorage.getItem("token") : null,
+  user: localStorage.getItem("user") ? localStorage.getItem("user") : null,
+};
 const AuthProvider = ({ children }) => {
-  return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
+  const [authState, authDispatch] = useReducer(authReducer, initialState);
+  return (
+    <AuthContext.Provider value={{ authState, authDispatch }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
-export { AuthProvider };
+const useAuth = () => useContext(AuthContext);
+export { AuthProvider, useAuth };
