@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import "./card.css";
 const Card = ({ image, title, quizId }) => {
   const Navigate = useNavigate();
   return (
