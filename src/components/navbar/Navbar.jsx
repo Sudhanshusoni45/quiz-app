@@ -1,18 +1,12 @@
-import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context";
-import { logoutHandler } from "../../util";
 import "./navbar.css";
 const Navbar = () => {
   const {
     authState: { user },
-    authDispatch,
   } = useAuth();
   console.log("user:", user);
-  const auth = getAuth();
-  const logoutBtnHandler = () => {
-    logoutHandler({ auth, authDispatch });
-  };
+
   return (
     <header className="navigation">
       <div>
