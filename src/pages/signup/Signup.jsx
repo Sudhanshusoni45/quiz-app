@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./signup.css";
 import { signupHandler } from "../../util";
@@ -12,6 +12,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  const Navigate = useNavigate();
   const auth = getAuth();
   const { authDispatch } = useAuth();
   const changeHandler = (e) => {
@@ -21,7 +22,7 @@ const Signup = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     const { email, password } = newUser;
-    signupHandler({ auth, email, password, authDispatch });
+    signupHandler({ auth, email, password, authDispatch, Navigate });
   };
   const handleTestCreadentials = () => {
     setNewUser({
