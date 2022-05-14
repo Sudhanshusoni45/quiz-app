@@ -6,10 +6,10 @@ import { useAuth } from "../../context";
 
 const Signup = () => {
   const [newUser, setNewUser] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
+    firstName: "",
+    lastName: "",
   });
   const Navigate = useNavigate();
   const { authDispatch } = useAuth();
@@ -19,7 +19,7 @@ const Signup = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    const { email, password } = newUser;
+    signupHandler({ newUser, authDispatch, Navigate });
   };
   const handleTestCreadentials = () => {
     setNewUser({
