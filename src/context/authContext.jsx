@@ -1,4 +1,3 @@
-import { getAuth } from "firebase/auth";
 import { createContext, useContext, useReducer } from "react";
 import { authReducer } from "../reducer";
 
@@ -9,10 +8,9 @@ const initialState = {
     : null,
 };
 const AuthProvider = ({ children }) => {
-  const auth = getAuth();
   const [authState, authDispatch] = useReducer(authReducer, initialState);
   return (
-    <AuthContext.Provider value={{ auth, authState, authDispatch }}>
+    <AuthContext.Provider value={{ authState, authDispatch }}>
       {children}
     </AuthContext.Provider>
   );

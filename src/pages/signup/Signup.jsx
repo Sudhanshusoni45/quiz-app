@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./signup.css";
 import { signupHandler } from "../../util";
-import { getAuth } from "firebase/auth";
 import { useAuth } from "../../context";
 
 const Signup = () => {
@@ -13,7 +12,6 @@ const Signup = () => {
     password: "",
   });
   const Navigate = useNavigate();
-  const auth = getAuth();
   const { authDispatch } = useAuth();
   const changeHandler = (e) => {
     const { name, value } = e.target;
@@ -22,7 +20,6 @@ const Signup = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     const { email, password } = newUser;
-    signupHandler({ auth, email, password, authDispatch, Navigate });
   };
   const handleTestCreadentials = () => {
     setNewUser({

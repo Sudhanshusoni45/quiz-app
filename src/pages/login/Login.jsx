@@ -13,7 +13,6 @@ const Login = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     const { email, password } = user;
-    signInHandler({ auth, authDispatch, email, password, Navigate });
   };
   const changeHandler = (e) => {
     const { name, value } = e.target;
