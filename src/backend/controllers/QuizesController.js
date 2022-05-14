@@ -1,5 +1,5 @@
 import { Response } from "miragejs";
-import { requiresAuth } from "../utils/authUtils";
+import { formatDate, requiresAuth } from "../utils/authUtils";
 import { v4 as uuid } from "uuid";
 
 export const getAllQuizesHandler = function () {
