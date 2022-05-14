@@ -23,10 +23,10 @@ const Signup = () => {
   };
   const handleTestCreadentials = () => {
     setNewUser({
-      firstName: "sudhanshu",
-      lastName: "soni",
       email: "sudhanshu@gmail.com",
       password: "sudhanshu123",
+      firstName: "sudhanshu",
+      lastName: "soni",
     });
   };
   const { firstName, lastName, email, password } = newUser;

@@ -2,10 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context";
 import "./navbar.css";
 const Navbar = () => {
-  const {
-    authState: { user },
-  } = useAuth();
-  console.log("user:", user);
+  const { authState } = useAuth();
 
   return (
     <header className="navigation">
@@ -16,7 +13,7 @@ const Navbar = () => {
         </Link>
       </div>
       <nav>
-        {user === null ? (
+        {authState.token === null ? (
           <Link to={"/login"}>
             <button className="btn">Login</button>
           </Link>

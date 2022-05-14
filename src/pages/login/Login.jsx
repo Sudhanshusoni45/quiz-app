@@ -9,10 +9,10 @@ const Login = () => {
     password: "",
   });
   const Navigate = useNavigate();
-  const { auth, authDispatch } = useAuth();
+  const { authDispatch } = useAuth();
   const submitHandler = (e) => {
     e.preventDefault();
-    const { email, password } = user;
+    signInHandler({ Navigate, authDispatch, user });
   };
   const changeHandler = (e) => {
     const { name, value } = e.target;

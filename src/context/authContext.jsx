@@ -3,6 +3,7 @@ import { authReducer } from "../reducer";
 
 const AuthContext = createContext();
 const initialState = {
+  token: localStorage.getItem("token") ? localStorage.getItem("token") : null,
   user: localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))
     : null,
