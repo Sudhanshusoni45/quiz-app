@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components";
-import { LandingPage, Login, Logout, QuizPage, Signup } from "./pages";
+import { LandingPage, Login, Logout, QuizPage, Result, Signup } from "./pages";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </>
   );

@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
-const Card = ({ image, title, quizId }) => {
+const Card = ({ coverImage, title, quizId }) => {
   const Navigate = useNavigate();
 
   return (
     <div className="basic-card" onClick={() => Navigate(`quiz/${quizId}`)}>
       <div className="upperSection">
         <img
-          src={image}
-          alt="marvel-characters"
+          src={coverImage}
+          alt={title}
           className="card_image object_fit_cover"
         />
 

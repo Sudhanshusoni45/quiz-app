@@ -7,3 +7,6 @@
 .transparent_btn {
   border: 0px;
 }
+.list_reset {
+  list-style: none;
+}
