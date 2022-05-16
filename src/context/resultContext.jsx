@@ -1,8 +1,17 @@
-import { createContext } from "react";
+import { createContext, useContext, useReducer } from "react";
+import { resultReducer } from "../reducer";
 
 const ResultContext = createContext();
+const initialState = {};
 const ResultProvider = ({ children }) => {
-  return <ResultContext.Provider value={{}}>{children}</ResultContext.Provider>;
+  const [resultState, resultDispatch] = useReducer(resultReducer, initialState);
+  return (
+    <ResultContext.Provider value={{ resultState, resultDispatch }}>
+      {children}
+    </ResultContext.Provider>
+  );
 };
 
-export { ResultProvider };
+const useResult = () => useContext(ResultContext);
+
+export { ResultProvider, useResult };
