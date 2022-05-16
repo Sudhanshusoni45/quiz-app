@@ -1,8 +1,8 @@
 import "./quizOption.css";
-const QuizOption = () => {
+const QuizOption = ({ option, questionHandler }) => {
   return (
-    <div className="quiz_option_conatiner">
-      <span className="quiz_option">Option</span>
+    <div className="quiz_option_conatiner" onClick={questionHandler}>
+      <span className="quiz_option">{option}</span>
     </div>
   );
 };
