@@ -1,26 +1,39 @@
-import { QuizOption } from "../../components";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { Question } from "../../components";
+import { useResult } from "../../context";
+import { getSingleQuizHandler } from "../../util";
 import "./quizPage.css";
 
 const QuizPage = () => {
+  const [activeQuiz, setActiveQuiz] = useState("");
+  const [questionCount, setQuestionCount] = useState(0);
+  const Navigate = useNavigate();
+  const questionHandler = () => {
+    if (questionCount < activeQuiz.mcqs.length - 1)
+      setQuestionCount((prevCount) => prevCount + 1);
+    else {
+      Navigate("/result");
+    }
+  };
+  const { quizId } = useParams();
+  useEffect(() => {
+    getSingleQuizHandler({ quizId, setActiveQuiz });
+  }, []);
+
   return (
-    <div className="quiz_page_container">
-      <div className="quizContainer">
-        <h1 className="quiz_title">Title</h1>
-        <div className="questionno_and_score_container">
-          <span>Question: 1/5</span>
-          <span className="quiz_score">Score: 0</span>
+    <>
+      {activeQuiz ? (
+        <div className="quiz_page_container">
+          <Question
+            title={activeQuiz.title}
+            questionCount={questionCount}
+            questionData={activeQuiz.mcqs[questionCount]}
+            questionHandler={questionHandler}
+          />
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          quaerat quam eum molestiae animi eaque accusantium doloribus, eos ab
-          corporis?
-        </p>
-        <QuizOption />
-        <QuizOption />
-        <QuizOption />
-        <QuizOption />
-      </div>
-    </div>
+      ) : null}
+    </>
   );
 };
 
