@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Question } from "../../components";
-import { useResult } from "../../context";
 import { getSingleQuizHandler } from "../../util";
 import "./quizPage.css";
 
@@ -19,7 +18,7 @@ const QuizPage = () => {
   const { quizId } = useParams();
   useEffect(() => {
     getSingleQuizHandler({ quizId, setActiveQuiz });
-  }, []);
+  }, [quizId, setActiveQuiz]);
 
   return (
     <>

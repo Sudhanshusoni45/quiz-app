@@ -11,7 +11,7 @@ const LandingPage = () => {
   useEffect(() => {
     getQuizesHandler(setQuiz);
     resultDispatch({ type: "INITIALIZE", payload: {} });
-  }, []);
+  }, [setQuiz, resultDispatch]);
   return (
     <>
       <div className="landingPage_container">
