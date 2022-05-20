@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import { Card } from "../../components";
-import { useQuiz } from "../../context";
+import { useQuiz, useResult } from "../../context";
 import { getQuizesHandler } from "../../util";
 import "./landingPage.css";
 
 const LandingPage = () => {
   const { quizState, setQuiz } = useQuiz();
+  const { resultDispatch } = useResult();
   console.log("quizState:", quizState);
   useEffect(() => {
     getQuizesHandler(setQuiz);
+    resultDispatch({ type: "INITIALIZE", payload: {} });
   }, []);
   return (
     <>
@@ -16,9 +18,14 @@ const LandingPage = () => {
         {quizState.length === 0 ? (
           <h1>Loading...</h1>
         ) : (
-          quizState.map(({ _id: quizId, title, coverImage }) => (
+          quizState.map(({ _id: quizId, title, coverImage, description }) => (
             <li key={quizId} className="list_reset">
-              <Card title={title} quizId={quizId} coverImage={coverImage} />
+              <Card
+                title={title}
+                quizId={quizId}
+                coverImage={coverImage}
+                description={description}
+              />
             </li>
           ))
         )}

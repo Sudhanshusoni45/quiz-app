@@ -3,6 +3,7 @@ import { useAuth } from "../../context";
 import "./navbar.css";
 const Navbar = () => {
   const { authState } = useAuth();
+  console.log("authState:", authState);
 
   return (
     <header className="navigation">
@@ -21,7 +22,7 @@ const Navbar = () => {
           <Link to={"/logout"}>
             <button className="transparent_btn username_btn">
               <i className="fas fa-user"></i>
-              <span> Username</span>
+              <span>{authState.user.firstName}</span>
             </button>
           </Link>
         )}

@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 import { resultReducer } from "../reducer";
 
 const ResultContext = createContext();
-const initialState = {};
+const initialState = [];
 const ResultProvider = ({ children }) => {
   const [resultState, resultDispatch] = useReducer(resultReducer, initialState);
   return (

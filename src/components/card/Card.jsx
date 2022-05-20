@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-const Card = ({ coverImage, title, quizId }) => {
+const Card = ({ coverImage, title, quizId, description }) => {
   const Navigate = useNavigate();
 
   return (
@@ -13,10 +13,9 @@ const Card = ({ coverImage, title, quizId }) => {
 
         <div className="upperContent">
           <h2>{title}</h2>
-          <h3>Author</h3>
         </div>
         <div className="details">
-          <p>Text Content</p>
+          <p>{description}</p>
         </div>
       </div>
     </div>
