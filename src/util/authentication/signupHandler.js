@@ -1,4 +1,4 @@
-import { signupService } from "../services";
+import { signupService } from "../../services";
 
 const signupHandler = async ({ newUser, authDispatch }) => {
   try {

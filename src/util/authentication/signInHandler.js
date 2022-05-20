@@ -1,4 +1,4 @@
-import { signInService } from "../services";
+import { signInService } from "../../services";
 
 const signInHandler = async ({ authDispatch, Navigate, user }) => {
   try {
