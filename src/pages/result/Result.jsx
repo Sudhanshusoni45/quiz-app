@@ -9,6 +9,7 @@ const Result = () => {
     <>
       <div className="result_page_container">
         <h1>Results are here</h1>
+        <span>Your Score : {resultState[resultState.length - 1].score}</span>
         {resultState ? (
           resultState.map((item, index) => (
             <ResultContainer result={resultState[index]} />

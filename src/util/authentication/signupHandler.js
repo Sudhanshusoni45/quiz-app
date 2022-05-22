@@ -3,7 +3,6 @@ import { signupService } from "../../services";
 const signupHandler = async ({ newUser, authDispatch }) => {
   try {
     const response = await signupService({ newUser });
-    console.log("response:", response);
     if (response.status === 201) {
       const {
         data: { encodedToken: token, createdUser: user },

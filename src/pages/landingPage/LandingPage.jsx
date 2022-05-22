@@ -7,7 +7,6 @@ import "./landingPage.css";
 const LandingPage = () => {
   const { quizState, setQuiz } = useQuiz();
   const { resultDispatch } = useResult();
-  console.log("quizState:", quizState);
   useEffect(() => {
     getQuizesHandler(setQuiz);
     resultDispatch({ type: "INITIALIZE", payload: {} });

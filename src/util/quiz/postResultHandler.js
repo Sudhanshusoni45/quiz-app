@@ -1,9 +1,8 @@
-import { postResultService } from "../../services";
-
+// import { postResultService } from "../../services";
+// this file will not be needed
 const postResultHandler = async ({ token, resultDispatch }) => {
   try {
-    const response = await postResultService(token);
-    console.log("response:", response);
+    // const response = await postResultService(token);
   } catch (error) {
     console.error();
   }

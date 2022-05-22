@@ -1,12 +1,24 @@
 import { useResult } from "../../context";
 import "./quizOption.css";
-const QuizOption = ({ option, questionHandler, questionData }) => {
+const QuizOption = ({
+  option,
+  questionHandler,
+  questionData,
+  setScore,
+  score,
+}) => {
   const { resultDispatch } = useResult();
   const { question, options, answer } = questionData;
+  const scoreHandler = () => {
+    if (questionData.answer === option) {
+      setScore((prevScore) => prevScore + 10);
+    }
+  };
   const clickHandler = () => {
+    scoreHandler();
     resultDispatch({
       type: "UPDATE",
-      payload: { selectedOption: option, question, options, answer },
+      payload: { selectedOption: option, question, options, answer, score },
     });
   };
   return (
